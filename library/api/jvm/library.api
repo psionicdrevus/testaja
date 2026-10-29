@@ -859,6 +859,7 @@ public final class com/lagradost/cloudstream3/MainAPIKt {
 	public static final fun addDate (Lcom/lagradost/cloudstream3/Episode;Lkotlin/time/Instant;)V
 	public static final fun addDate (Lcom/lagradost/cloudstream3/Episode;Lkotlinx/datetime/LocalDate;)V
 	public static synthetic fun addDate$default (Lcom/lagradost/cloudstream3/Episode;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static final fun addDualSub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
 	public static final fun addDub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
 	public static final fun addDubStatus (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Lcom/lagradost/cloudstream3/DubStatus;Ljava/lang/Integer;)V
 	public static final fun addDubStatus (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/String;Ljava/lang/Integer;)V
@@ -874,7 +875,6 @@ public final class com/lagradost/cloudstream3/MainAPIKt {
 	public static synthetic fun addPoster$default (Lcom/lagradost/cloudstream3/LoadResponse;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)V
 	public static synthetic fun addPoster$default (Lcom/lagradost/cloudstream3/SearchResponse;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)V
 	public static final fun addQuality (Lcom/lagradost/cloudstream3/SearchResponse;Ljava/lang/String;)V
-	public static final fun addDualSub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
 	public static final fun addSeasonNamesSeasonData (Lcom/lagradost/cloudstream3/EpisodeResponse;Ljava/util/List;)V
 	public static final fun addSeasonNamesString (Lcom/lagradost/cloudstream3/EpisodeResponse;Ljava/util/List;)V
 	public static final fun addSub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
@@ -8074,6 +8074,8 @@ public class com/lagradost/cloudstream3/utils/AtomicList : java/util/List, kotli
 	public fun add (Ljava/lang/Object;)Z
 	public fun addAll (ILjava/util/Collection;)Z
 	public fun addAll (Ljava/util/Collection;)Z
+	public fun addFirst (Ljava/lang/Object;)V
+	public fun addLast (Ljava/lang/Object;)V
 	public fun clear ()V
 	public fun contains (Ljava/lang/Object;)Z
 	public fun containsAll (Ljava/util/Collection;)Z
@@ -8092,6 +8094,8 @@ public class com/lagradost/cloudstream3/utils/AtomicList : java/util/List, kotli
 	public fun remove (I)Ljava/lang/Object;
 	public fun remove (Ljava/lang/Object;)Z
 	public fun removeAll (Ljava/util/Collection;)Z
+	public fun removeFirst ()Ljava/lang/Object;
+	public fun removeLast ()Ljava/lang/Object;
 	public fun replaceAll (Ljava/util/function/UnaryOperator;)V
 	public fun retainAll (Ljava/util/Collection;)Z
 	public fun set (ILjava/lang/Object;)Ljava/lang/Object;
