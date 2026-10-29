@@ -254,6 +254,7 @@ interface IPlayer {
     fun hasPreview() : Boolean
 
     fun setActiveSubtitles(subtitles: Set<SubtitleData>)
+    fun setSecondarySubtitles(subtitle: SubtitleData?) {}
     fun setPreferredSubtitles(subtitle: SubtitleData?): Boolean // returns true if the player requires a reload, null for nothing
     fun getCurrentPreferredSubtitle(): SubtitleData?
 
