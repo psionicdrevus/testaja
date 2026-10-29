@@ -470,6 +470,7 @@ public final class com/lagradost/cloudstream3/AutoDownloadMode$Companion {
 }
 
 public final class com/lagradost/cloudstream3/DubStatus : java/lang/Enum {
+	public static final field DualSub Lcom/lagradost/cloudstream3/DubStatus;
 	public static final field Dubbed Lcom/lagradost/cloudstream3/DubStatus;
 	public static final field None Lcom/lagradost/cloudstream3/DubStatus;
 	public static final field Subbed Lcom/lagradost/cloudstream3/DubStatus;
@@ -873,6 +874,7 @@ public final class com/lagradost/cloudstream3/MainAPIKt {
 	public static synthetic fun addPoster$default (Lcom/lagradost/cloudstream3/LoadResponse;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)V
 	public static synthetic fun addPoster$default (Lcom/lagradost/cloudstream3/SearchResponse;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)V
 	public static final fun addQuality (Lcom/lagradost/cloudstream3/SearchResponse;Ljava/lang/String;)V
+	public static final fun addDualSub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
 	public static final fun addSeasonNamesSeasonData (Lcom/lagradost/cloudstream3/EpisodeResponse;Ljava/util/List;)V
 	public static final fun addSeasonNamesString (Lcom/lagradost/cloudstream3/EpisodeResponse;Ljava/util/List;)V
 	public static final fun addSub (Lcom/lagradost/cloudstream3/AnimeSearchResponse;Ljava/lang/Integer;)V
