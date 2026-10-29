@@ -906,6 +906,7 @@ enum class DubStatus(val id: Int) {
     None(-1),
     Dubbed(1),
     Subbed(0),
+    DualSub(2),
 }
 
 /** This is the primary way to store score/rating. Use Score.from or Score.from10 to parse the score
@@ -1594,6 +1595,10 @@ fun AnimeSearchResponse.addSub(episodes: Int?) {
     addDubStatus(DubStatus.Subbed, episodes)
 }
 
+fun AnimeSearchResponse.addDualSub(episodes: Int?) {
+    addDubStatus(DubStatus.DualSub, episodes)
+}
+
 fun AnimeSearchResponse.addDubStatus(
     dubExist: Boolean,
     subExist: Boolean,
@@ -1610,6 +1615,8 @@ fun AnimeSearchResponse.addDubStatus(
 fun AnimeSearchResponse.addDubStatus(status: String, episodes: Int? = null) {
     if (status.contains("(dub)", ignoreCase = true)) {
         addDubStatus(DubStatus.Dubbed, episodes)
+    } else if (status.contains("dual sub", ignoreCase = true) || status.contains("dualsub", ignoreCase = true)) {
+        addDubStatus(DubStatus.DualSub, episodes)
     } else if (status.contains("(sub)", ignoreCase = true)) {
         addDubStatus(DubStatus.Subbed, episodes)
     }
