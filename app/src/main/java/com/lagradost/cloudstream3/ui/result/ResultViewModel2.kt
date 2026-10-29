@@ -222,6 +222,7 @@ fun txt(status: DubStatus?): UiText? {
         when (status) {
             DubStatus.Dubbed -> R.string.app_dubbed_text
             DubStatus.Subbed -> R.string.app_subbed_text
+            DubStatus.DualSub -> R.string.app_dualsub_text
             else -> null
         }
     )

@@ -181,6 +181,7 @@ class GeneratorPlayer : FullScreenPlayer() {
 
     private var currentSelectedLink: Pair<ExtractorLink?, ExtractorUri?>? = null
     private var currentSelectedSubtitles: SubtitleData? = null
+    private var secondarySelectedSubtitles: SubtitleData? = null
     private val currentMeta: Any? get() = viewModel.state.generatorState?.meta
     private val nextMeta: Any? get() = viewModel.state.generatorState?.nextMeta
 
