@@ -77,6 +77,7 @@ object SettingsProvidersScreen : SearchableSettings {
                 DubStatus.None.name to stringResource(R.string.none),
                 DubStatus.Dubbed.name to stringResource(R.string.app_dubbed_text),
                 DubStatus.Subbed.name to stringResource(R.string.app_subbed_text),
+                DubStatus.DualSub.name to stringResource(R.string.app_dualsub_text),
             )
         ), Preference.PreferenceItem.TextPreference(
             title = stringResource(R.string.test_extensions),

@@ -506,6 +506,13 @@ class CS3IPlayer : IPlayer {
     /**
      * @return True if the player should be reloaded
      * */
+    private var currentSecondarySubtitles: SubtitleData? = null
+
+    override fun setSecondarySubtitles(subtitle: SubtitleData?) {
+        Log.i(TAG, "setSecondarySubtitles $subtitle")
+        currentSecondarySubtitles = subtitle
+    }
+
     override fun setPreferredSubtitles(subtitle: SubtitleData?): Boolean {
         Log.i(TAG, "setPreferredSubtitles init $subtitle")
         currentSubtitles = subtitle

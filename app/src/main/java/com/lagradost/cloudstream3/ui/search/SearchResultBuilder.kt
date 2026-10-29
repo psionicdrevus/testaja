@@ -273,13 +273,13 @@ object SearchResultBuilder {
                     if (dubStatus.contains(DubStatus.Dubbed)) {
                         textIsDub?.isVisible = showDub
                     }
-                    if (dubStatus.contains(DubStatus.Subbed)) {
+                    if (dubStatus.contains(DubStatus.Subbed) || dubStatus.contains(DubStatus.DualSub)) {
                         textIsSub?.isVisible = showSub
                     }
                 }
 
                 val dubEpisodes = card.episodes[DubStatus.Dubbed]
-                val subEpisodes = card.episodes[DubStatus.Subbed]
+                val subEpisodes = card.episodes[DubStatus.DualSub] ?: card.episodes[DubStatus.Subbed]
 
                 textIsDub?.apply {
                     val dubText = context.getString(R.string.app_dubbed_text)
@@ -292,7 +292,7 @@ object SearchResultBuilder {
                 }
 
                 textIsSub?.apply {
-                    val subText = context.getString(R.string.app_subbed_text)
+                    val subText = if (dubStatus?.contains(DubStatus.DualSub) == true) context.getString(R.string.app_dualsub_text) else context.getString(R.string.app_subbed_text)
                     text = if (subEpisodes != null && subEpisodes > 0) {
                         context.getString(R.string.app_dub_sub_episode_text_format)
                             .format(subText, subEpisodes)
