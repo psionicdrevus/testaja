@@ -97,6 +97,7 @@ class PlayerSubtitleHelper {
     }
 
     var subtitleView: SubtitleView? = null
+    var secondarySubtitleView: SubtitleView? = null
 
     companion object {
         fun String.toSubtitleMimeType(): String {
@@ -135,6 +136,9 @@ class PlayerSubtitleHelper {
         Log.i(TAG, "SET STYLE = $style")
         subtitleView?.translationY = -style.elevation.toPx.toFloat()
         setSubtitleViewStyle(subtitleView, style, true)
+        secondarySubtitleView?.let { secView ->
+            setSubtitleViewStyle(secView, style, true)
+        }
     }
 
     fun initSubtitles(subView: SubtitleView?, subHolder: FrameLayout?, style: SaveCaptionStyle?) {
@@ -143,6 +147,19 @@ class PlayerSubtitleHelper {
             (sView.parent as ViewGroup?)?.removeView(sView)
             subHolder?.addView(sView)
         }
+
+        if (subHolder != null && secondarySubtitleView == null) {
+            val context = subHolder.context
+            val secView = SubtitleView(context)
+            secView.layoutParams = FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.WRAP_CONTENT,
+                android.view.Gravity.TOP or android.view.Gravity.CENTER_HORIZONTAL
+            )
+            subHolder.addView(secView)
+            secondarySubtitleView = secView
+        }
+
         style?.let {
             setSubStyle(it)
         }

@@ -1219,6 +1219,7 @@ class CS3IPlayer : IPlayer {
                         val combinedCues = styledBitmapCues + styledTextCues
 
                         subtitleHelper.subtitleView?.setCues(combinedCues)
+                        subtitleHelper.secondarySubtitleView?.setCues(combinedCues)
                     }
 
                     factory.createRenderers(
